@@ -1,4 +1,4 @@
-// 탭 전환
+//탭 전환
 const tabButtons = document.querySelectorAll(".cs-tab-btn");
 const tabSections = document.querySelectorAll(".cs-tab");
 
@@ -14,7 +14,7 @@ tabButtons.forEach((btn) => {
   });
 });
 
-// 더미 문의 목록 데이터
+//더미 문의 목록 데이터 수정본
 const dummyTickets = [
   {
     id: 1,
@@ -40,6 +40,30 @@ const dummyTickets = [
     orderNo: "20260311-000321",
     createdAt: "2026-03-12 16:20",
   },
+  {
+    id: 4,
+    status: "대기",
+    type: "환불 요청",
+    customer: "박지은",
+    orderNo: "20260313-000812",
+    createdAt: "2026-03-13 10:05",
+  },
+  {
+    id: 5,
+    status: "처리 중",
+    type: "배송 주소 변경",
+    customer: "최준호",
+    orderNo: "20260312-000721",
+    createdAt: "2026-03-13 10:40",
+  },
+  {
+    id: 6,
+    status: "완료",
+    type: "상품 파손",
+    customer: "정수빈",
+    orderNo: "20260310-000211",
+    createdAt: "2026-03-12 14:15",
+  },
 ];
 
 const ticketTableBody = document.getElementById("ticketTableBody");
@@ -62,7 +86,7 @@ function renderTickets(list) {
 
 renderTickets(dummyTickets);
 
-// 간단 검색 (문자 포함 여부만 체크)
+//간단 검색 (문자 포함 여부만 체크)
 const searchInput = document.getElementById("searchKeyword");
 const searchBtn = document.getElementById("searchBtn");
 
@@ -87,7 +111,7 @@ searchInput.addEventListener("keyup", (e) => {
   if (e.key === "Enter") searchTickets();
 });
 
-// 처리 내용 "저장" 버튼 (실제 저장은 아니고, 안내 메시지만)
+//처리 내용 "저장" 버튼 (실제 저장은 아니고, 안내 메시지만)
 const saveBtn = document.getElementById("saveBtn");
 const answerText = document.getElementById("answerText");
 const statusSelect = document.getElementById("statusSelect");
